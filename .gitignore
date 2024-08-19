@@ -1,3 +1,6 @@
 venv/
 .idea/
 josve/
+
+**/__pycache__/
+*.pyc
