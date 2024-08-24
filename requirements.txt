@@ -3,3 +3,4 @@ Django==5.1
 djangorestframework==3.15.2
 sqlparse==0.5.1
 tzdata==2024.1
+pillow ==10.4.0
