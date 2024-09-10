@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
+from .local_settings import *
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 import os
 
@@ -25,9 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&29(3#5#94!zx%y5)g1p#^zq$otwagihbdb_t4mag%tq4*60u&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -40,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'products' , 
+    'products',
+     
+    'users',
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -131,3 +134,16 @@ MEDIA_URL ='/media/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#authoraization
+AUTH_USER_MODEL= 'users.User'
+
+
+# Cache
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}

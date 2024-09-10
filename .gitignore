@@ -4,5 +4,7 @@ josve/
 media/
 
 db.sqlite3
+local_settings.py
+
 **/__pycache__/
 *.pyc
