@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import Gateway, Payment
 
-###################################
+################################
 
 @admin.register(Gateway)
 class GatewayAdmin(admin.ModelAdmin):
