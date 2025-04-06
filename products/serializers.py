@@ -27,3 +27,8 @@ class ProductSerializers(serializers.HyperlinkedModelSerializer):
         model =  Product
         fields = ('id','title' ,'description' , 'avatar' , 'categories', 'files' , 'url')
         
+    def validate_title(self, value):  
+        if not value:  
+            raise serializers.ValidationError("عنوان نمی‌تواند خالی باشد.")  
+        return value  
+        
